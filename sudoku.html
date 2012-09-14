@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Sudoku Solver</title>
+<style type="text/css">
+div.group-row{
+	display:table;
+}
+div.group-column{
+	width:100px;
+	height:100px;
+	text-align:center;
+	display:table-cell;
+	color:green;
+}
+div.group-column-1,div.group-column-2{
+	border-right:.1em;
+	border-right-style:solid;
+	border-right-color:black;
+}
+div.group-row-1,div.group-row-2{
+	border-bottom:.1em;
+	border-bottom-style:solid;
+}
+#puzzle div{
+	padding:0px;
+	margin:0px;
+}
+</style>
+</head>
+
+<body>
+<div id="puzzle">
+	<div class="group-row-1 group-row">
+		<div class="group-column-1 group-column">1</div>
+		<div class="group-column-2 group-column">-</div>
+		<div class="group-column-3 group-column">3</div>
+	</div>
+	<div class="group-row-2 group-row">
+		<div class="group-column-1 group-column"></div>
+		<div class="group-column-2 group-column"></div>
+		<div class="group-column-3 group-column"></div>
+	</div>
+	<div class="group-row-3 group-row">
+		<div class="group-column-1 group-column">1</div>
+		<div class="group-column-2 group-column">2</div>
+		<div class="group-column-3 group-column">3</div>
+	</div>
+</div>
+
+<table id="puzzletab">
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+</table>
+</body>
+
+</html>
