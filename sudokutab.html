@@ -3,105 +3,19 @@
 
 <head>
     <script src="jquery.min.js"></script>
-    <script>
-        function generateTable(tableClass, tdClass, rowOffset, columnOffset){ //whole string i.e. "foo" or "bar"
-            //returns a jQuery node object
-            var puzzle = $('<table class="' + tableClass + '"></table>');
-            for(var j=1; j <= 3; ++j)
-            {
-                var row=$('<tr class="' + tableClass + '-row-' + (j + rowOffset) + '"></tr>');
-                for(var i=1; i <= 3; ++i)
-                {
-                    var td=$('<td class="' + tableClass + '-column-' + (i + columnOffset) + ' ' + tdClass + '"></td>');
-                    row.append(td);
-                }
-                puzzle.append(row);
-            }
-            return puzzle;
-        }
-
-        $(document).ready(function(){
-            var main=generateTable("puzzletab", "group", 0, 0);
-            main.find("tr").each(function(row){
-                $(this).find("td").each(function(column){
-                    var sub=generateTable("group", "cell", row*3, column*3);
-                    $(this).append(sub);
-                });
-            });
-            $("div#puzzlearea").append(main);
-        });
-    </script>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Sudoku Solver</title>
-<style type="text/css">
-table.puzzletab{
-	width:40em;
-	height:40em;
-}
-table.group{
-	width:100%;
-	height:100%;
-}
-td.group{
-	height:33%;
-	width:33%;
-	border-width:.2em;
-	border-style:solid;
-	text-align:center;
-}
-td.cell{
-	height:33%;
-	width:33%;
-	border-width:.1em;
-	border-style:solid;
-	text-align:center;	
-}
-</style>
+    <script src="sudoku.js"></script>
+    <link rel="stylesheet" type="text/css" href="sudoku.css" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Sudoku Solver</title>
 </head>
 
 <body>
 
-<div id="puzzlearea">
-
-</div>
-<!--
-<table class="puzzletab">
-	<tr>
-		<td class="group"></td>
-		<td class="group"></td>
-		<td class="group"></td>
-	</tr>
-	<tr>
-		<td class="group"></td>
-		<td class="group"></td>
-		<td class="group"></td>
-	</tr>
-	<tr>
-		<td class="group">
-			<table class="group">
-				<tr>
-					<td class="cell"></td>
-					<td class="cell"></td>
-					<td class="cell"></td>
-				</tr>
-				<tr>
-					<td class="cell"></td>
-					<td class="cell"></td>
-					<td class="cell"></td>
-				</tr>
-				<tr>
-					<td class="cell"></td>
-					<td class="cell"></td>
-					<td class="cell"></td>
-				</tr>
-			</table>
-		</td>
-		<td class="group"></td>
-		<td class="group"></td>
-	</tr>
-
-</table>
--->
+<div id="puzzlearea"></div>
+<form id="toparse">
+    <textarea id="input" cols="18" rows="9"></textarea>
+    <input id="parse" type="submit" value="Parse it!" />
+</form>
 </body>
 
 </html>

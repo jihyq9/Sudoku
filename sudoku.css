@@ -1,0 +1,30 @@
+div#puzzlearea{
+    display:block;
+    float:left;
+}
+form#toparse{
+    display:block;
+    float:left;
+}
+table.puzzletab{
+    width:40em;
+    height:40em;
+}
+table.group{
+    width:100%;
+    height:100%;
+}
+td.group{
+    height:33%;
+    width:33%;
+    border-width:.2em;
+    border-style:solid;
+    text-align:center;
+}
+td.cell{
+    height:33%;
+    width:33%;
+    border-width:.1em;
+    border-style:solid;
+    text-align:center;
+}
